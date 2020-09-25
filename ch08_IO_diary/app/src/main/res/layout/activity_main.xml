@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <DatePicker
+        android:id="@+id/datepick1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"/>
+    <EditText
+        android:id="@+id/diary1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#7AFFCF"
+        android:lines="4"/>
+    <Button
+        android:id="@+id/btnW"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"/>
+    <Button
+        android:id="@+id/btnRead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="/res/raw에서 파일 읽기"/>
+    <EditText
+        android:id="@+id/edtRaw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#C8C8FF"
+        android:lines="3"/>
+
+</LinearLayout>

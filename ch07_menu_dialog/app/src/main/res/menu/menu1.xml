@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/me1"
+        android:title="항목1"/>
+    <item
+        android:id="@+id/me2"
+        android:title="항목2"/>
+    <item
+        android:id="@+id/me3"
+        android:title="항목3"/>
+    <item
+        android:title="버튼변경">
+        <menu>
+            <item
+                android:id="@+id/subRotate1"
+                android:title="버튼 45도 회전"/>
+            <item
+                android:id="@+id/subSize1"
+                android:title="버튼 2배 확대"/>
+        </menu>
+    </item>
+</menu>

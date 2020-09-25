@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:baselineAligned="false"
+    android:orientation="vertical">
+
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:format="예약에 걸린 시간 = %s"
+        android:textSize="15dp"/>
+    <Button
+        android:id="@+id/BtnRev"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="예약 시작"/>
+
+    <RadioGroup
+        android:id="@+id/rGp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible">
+
+        <RadioButton
+            android:id="@+id/rBn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="날짜 설정(캘린더뷰)"/>
+        <RadioButton
+            android:id="@+id/rBn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="시간 설정"/>
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/FrameCalv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:visibility="gone">
+        <CalendarView
+            android:id="@+id/calv"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:showWeekNumber="false"
+          />
+    </FrameLayout>
+
+        <TimePicker
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:timePickerMode="spinner"
+            android:visibility="gone"/>
+    <GridLayout
+        android:id="@+id/Grid1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="fill_horizontal"
+        android:visibility="invisible"
+        >
+        <Button
+            android:id="@+id/btnF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="예약완료"/>
+        <TextView
+            android:id="@+id/TextResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="안녕하세요."/>
+    </GridLayout>
+
+</LinearLayout>
