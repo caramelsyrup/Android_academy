@@ -17,11 +17,12 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     // 메인화면 버튼 변수
-    private Button btnRefresh,btnAdd;
+    private Button btnRefresh,btnAdd,btnSearch;
     // 메인화면 목록 변수
     private ListView listView1;
     // 목록변수에 꽂을 어뎁터 변수. 따로 클래스를 만들어서 변수를 만듦.
     private Custom_Adapter adapter;
+    private EditText edtSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +83,17 @@ public class MainActivity extends AppCompatActivity {
                         .show();
             }
         });
+
+        btnSearch = (Button) findViewById(R.id.btnSearch);
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String id = ((EditText)findViewById(R.id.edtSearch)).getText().toString();
+                new NetworkGet((Custom_Adapter) listView1.getAdapter()).execute(id);
+            }
+        });
+
         // 전체불러오기
         new NetworkGet((Custom_Adapter) listView1.getAdapter()).execute("");
-    }
+    }   // onCreate
 }

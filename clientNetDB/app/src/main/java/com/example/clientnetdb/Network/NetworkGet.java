@@ -39,7 +39,7 @@ public class NetworkGet extends AsyncTask<String,Void,String> {
     protected String doInBackground(String... strings) {    // String배열을 표현. String... Strings
         String res = "";
         try {
-            // jsp페이지를 접속한다.
+            // jsp페이지를 접속한다. 웹서버 연결
             Url = new URL(URL_Adress);
             HttpURLConnection conn = (HttpURLConnection) Url.openConnection();
             // 전송모드 설정
@@ -77,17 +77,18 @@ public class NetworkGet extends AsyncTask<String,Void,String> {
         return res;
     }
 
+    // doInBackground함수의 기능이 종료가 되면, onPostExecute함수가 실행.
     // 매개변수 s는 위의 res 값을 받는다.
     @Override
-    protected void onPostExecute(String s) {
-        super.onPostExecute(s);
+    protected void onPostExecute(String res) {
+        super.onPostExecute(res);
         // 데이터를 받을 배열객체 생성.
         ArrayList<UserInfo> userList = new ArrayList<UserInfo>();
         int count = 0;
         try {
             // res값이 저장된 s를 userList배열 객체에 넣는다.
             // getUserInfoJson함수를 정의 할때 json형의 데이터를 userList배열에 넣을 수 있도록 설계.
-            count = JsonParser.getUserInfoJson(s,userList);
+            count = JsonParser.getUserInfoJson(res,userList);
         } catch (JSONException e) {
             e.printStackTrace();
         }
